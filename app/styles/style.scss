@@ -167,6 +167,13 @@ md-backdrop.md-opaque {
 md-sidenav {
 	position: fixed;
 }
+.right{
+	text-align: right;
+	align-items: right;
+	align-self: right;
+	align-content: right;
+	float: right;
+}
 .pad-tb{
 		padding: 10px 0px;
 }

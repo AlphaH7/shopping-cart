@@ -255,11 +255,20 @@ md-sidenav {
 }
 
 /* line 170, ../../app/styles/style.scss */
+.right {
+  text-align: right;
+  align-items: right;
+  align-self: right;
+  align-content: right;
+  float: right;
+}
+
+/* line 177, ../../app/styles/style.scss */
 .pad-tb {
   padding: 10px 0px;
 }
 
-/* line 174, ../../app/styles/style.scss */
+/* line 181, ../../app/styles/style.scss */
 .avl, .unavl, .discount {
   padding: 0px 5px !important;
   border-radius: 15px;
@@ -268,25 +277,25 @@ md-sidenav {
   background-color: #7ac5cd;
 }
 
-/* line 181, ../../app/styles/style.scss */
+/* line 188, ../../app/styles/style.scss */
 .origPrc {
   text-decoration: line-through;
   font-size: 12px;
   color: #999;
 }
 
-/* line 186, ../../app/styles/style.scss */
+/* line 193, ../../app/styles/style.scss */
 .discount {
   color: #218197;
   background-color: #fff;
 }
 
-/* line 190, ../../app/styles/style.scss */
+/* line 197, ../../app/styles/style.scss */
 .unavl {
   background-color: #de3652;
 }
 
-/* line 193, ../../app/styles/style.scss */
+/* line 200, ../../app/styles/style.scss */
 .dCard, .paypal {
   background-color: #acde9d;
   border-radius: 50%;
@@ -297,7 +306,7 @@ md-sidenav {
   margin: 2px 2px;
 }
 
-/* line 202, ../../app/styles/style.scss */
+/* line 209, ../../app/styles/style.scss */
 .active {
   right: 0px;
   color: #777;
@@ -305,28 +314,28 @@ md-sidenav {
   padding: 0px 10px !important;
 }
 
-/* line 208, ../../app/styles/style.scss */
+/* line 215, ../../app/styles/style.scss */
 .pad-rl {
   padding: 0px 30px;
 }
 
-/* line 212, ../../app/styles/style.scss */
+/* line 219, ../../app/styles/style.scss */
 md-sidenav {
   width: 40vw !important;
 }
 
-/* line 215, ../../app/styles/style.scss */
+/* line 222, ../../app/styles/style.scss */
 md-input-container {
   text-align: left;
 }
 
-/* line 218, ../../app/styles/style.scss */
+/* line 225, ../../app/styles/style.scss */
 td.cashout {
   background-color: #7aca62;
   color: #ffffff !important;
 }
 
-/* line 223, ../../app/styles/style.scss */
+/* line 230, ../../app/styles/style.scss */
 footer {
   background-color: #323A45;
   color: #fff;
@@ -336,12 +345,12 @@ footer {
   bottom: 0px;
 }
 
-/* line 231, ../../app/styles/style.scss */
+/* line 238, ../../app/styles/style.scss */
 .faq-card {
   padding: 25px !important;
 }
 
-/* line 234, ../../app/styles/style.scss */
+/* line 241, ../../app/styles/style.scss */
 .faq,
 .faq li {
   margin: 0;
@@ -349,7 +358,7 @@ footer {
   list-style: none;
 }
 
-/* line 241, ../../app/styles/style.scss */
+/* line 248, ../../app/styles/style.scss */
 .faq h3 {
   border-bottom: 2px solid #5ABD3B;
   padding: 20px 0;
@@ -358,20 +367,20 @@ footer {
   cursor: pointer;
 }
 
-/* line 248, ../../app/styles/style.scss */
+/* line 255, ../../app/styles/style.scss */
 .faq h3 .mdi {
   position: absolute;
   right: 12px;
   top: 12px;
 }
 
-/* line 253, ../../app/styles/style.scss */
+/* line 260, ../../app/styles/style.scss */
 .faq div {
   line-height: 22px;
   padding: 15px 0 25px 0;
 }
 
-/* line 258, ../../app/styles/style.scss */
+/* line 265, ../../app/styles/style.scss */
 .StripeElement {
   background-color: white;
   padding: 8px 12px;
@@ -381,38 +390,38 @@ footer {
   transition: box-shadow 150ms ease;
 }
 
-/* line 268, ../../app/styles/style.scss */
+/* line 275, ../../app/styles/style.scss */
 .StripeElement--focus {
   box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
-/* line 272, ../../app/styles/style.scss */
+/* line 279, ../../app/styles/style.scss */
 .StripeElement--invalid {
   border-color: #fa755a;
 }
 
-/* line 276, ../../app/styles/style.scss */
+/* line 283, ../../app/styles/style.scss */
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
 
-/* line 279, ../../app/styles/style.scss */
+/* line 286, ../../app/styles/style.scss */
 .error {
   color: #000;
   font-size: 12px;
 }
 
-/* line 284, ../../app/styles/style.scss */
+/* line 291, ../../app/styles/style.scss */
 md-progress-linear .md-container {
   background-color: #dcdcdc;
 }
 
-/* line 287, ../../app/styles/style.scss */
+/* line 294, ../../app/styles/style.scss */
 md-progress-linear .md-bar {
   background-color: #206184;
 }
 
-/* line 290, ../../app/styles/style.scss */
+/* line 297, ../../app/styles/style.scss */
 .loader {
   position: fixed;
   top: 0px;
@@ -421,7 +430,7 @@ md-progress-linear .md-bar {
   z-index: 100;
 }
 
-/* line 297, ../../app/styles/style.scss */
+/* line 304, ../../app/styles/style.scss */
 .item {
   width: 15vw !important;
 }

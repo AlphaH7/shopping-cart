@@ -1,4 +1,4 @@
-angular.module('AM').controller('homeCtrl',['$scope','$http','$mdToast','$state',function(s,http,toast,state){
+angular.module('AM').controller('homeCtrl',['$scope','$http','$mdToast',function(s,http,toast){
 
   http.get('products.json').then(
     function(r){

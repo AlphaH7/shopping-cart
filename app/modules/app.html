@@ -3,7 +3,7 @@
     <md-sidenav  class="md-sidenav-right" md-component-id="right" md-whiteframe="14">
 
       <md-toolbar layout="column" layout-align="center center"  class="md-hue-1">
-        <div layout="row" layout-align="center center"><img class="logo" src="../images/logo.png"/><h1 class="md-toolbar-tools">Advertise Me</h1></div>
+        <div layout="row" layout-align="center center"><img class="logo" src="../images/logo.png"/><h1 class="md-toolbar-tools">AM - Online Superstore</h1></div>
       </md-toolbar>
 
       <md-card class="profile-image-bg">
@@ -16,9 +16,9 @@
       </md-card>
 
       <md-content>
-        <p class="grey center pad-tb" ng-show="payments.length==0"><i>No records to display</i></p>
-        <md-table-container>
-          <md-card class="table">
+        <p class="grey center pad-tb" ng-show="cart.length==0"><i>Empty Cart</i></p>
+        <md-table-container ng-show="!cart.length==0">
+          <md-card>
           <table  cellspacing="0" class="table" >
             <thead >
               <tr md-row>
@@ -26,18 +26,19 @@
               </tr>
             </thead>
             <tbody md-body>
-              <tr md-row ng-repeat="items in cart">
+              <tr md-row ng-repeat="items in result">
                 <td>{{items.name}}</td>
-                <td>{{items.price}}</td>
+                <td class="right">{{items.price}}</td>
+                <td><md-button class="md-fab md-mini md-warn" class="right" ng-click="remove(items.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button></td>
               </tr>
             </tbody>
-            {{(items.cart).mapValues('price').sum()}}
+
           </table>
         </md-card>
         </md-table-container>
       </md-content>
       <footer>
-        <p>© 2017 Advertise Me</p>
+        <p>© 2017 AM - Online Superstore</p>
       </footer>
     </md-sidenav>
 

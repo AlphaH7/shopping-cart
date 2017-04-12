@@ -83,9 +83,40 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
 
   s.add = function(id,x,price){
     console.log(id + '/'+ price)
-    s.cart.push({'name': x , 'price': price , id: 'id'});
+    s.cart.push({'name': x , 'price': price , 'id': id , 'quantity': 1});
     console.log(s.cart)
+    var newObj = {};
+    for(i in s.cart){
+     var item = s.cart[i];
+        if(newObj[item.name] === undefined){
+            newObj[item.name] = 0;
+        }
+        newObj[item.name] += item.price;
+    }
+    console.log(newObj);
+    result = {};
+    s.result = [];
+    for(i in newObj){
+        s.result.push({'name':i,'price':newObj[i]});
+    }
+    console.log(result);
   }
+  s.remove = function(name){
+  var index = -1;
+  var comArr = eval( s.result );
+  for( var i = 0; i < comArr.length; i++ ) {
+        if( comArr[i].name === name ) {
+            index = i;
+            break;
+         }
+  }
+  if( index === -1 ) {
+       alert( "Something gone wrong" );
+  }
+  s.result.splice( index, 1 );
+  console.log(s.result)
+
+  };
 }]);
 
 /*app.run(function($rootScope, $state){
