@@ -1,0 +1,62 @@
+<section  ng-controller="appCtrl" layout="row" layout-align="start stretch" class="full-height">
+
+    <md-sidenav  class="md-sidenav-right" md-component-id="right" md-whiteframe="14">
+
+      <md-toolbar layout="column" layout-align="center center"  class="md-hue-1">
+        <div layout="row" layout-align="center center"><img class="logo" src="../images/logo.png"/><h1 class="md-toolbar-tools">Advertise Me</h1></div>
+      </md-toolbar>
+
+      <md-card class="profile-image-bg">
+        <md-card-title layout="column" layout-align="center center">
+          <div><img class="profile-circle" src="http://egpp.gob.bo/images/pic4.png" ></img></div>
+          <md-card-title-text>
+              <h4 class="white-text"> {{user}} </h4>
+          </md-card-title-text>
+        </md-card-title>
+      </md-card>
+
+      <md-content>
+        <p class="grey center pad-tb" ng-show="payments.length==0"><i>No records to display</i></p>
+        <md-table-container>
+          <md-card class="table">
+          <table  cellspacing="0" class="table" >
+            <thead >
+              <tr md-row>
+                <th colspan="3"><span>Your Shopping Cart</span></th>
+              </tr>
+            </thead>
+            <tbody md-body>
+              <tr md-row ng-repeat="items in cart">
+                <td>{{items.name}}</td>
+                <td>{{items.price}}</td>
+              </tr>
+            </tbody>
+            {{(items.cart).mapValues('price').sum()}}
+          </table>
+        </md-card>
+        </md-table-container>
+      </md-content>
+      <footer>
+        <p>© 2017 Advertise Me</p>
+      </footer>
+    </md-sidenav>
+
+    <md-content layout="column" layout-align="start stretch" flex>
+
+      <md-toolbar style="position: fixed;" class="md-hue-1">
+            <div class="md-toolbar-tools">
+
+              <h2 flex md-truncate><img class="logo" src="../images/logo.png"/></h2>
+              <span flex></span>
+              <h3 md-truncate>{{user}}</h3>
+
+                <md-button class="md-icon-button" aria-label="side-nav" ng-click="toggleMenu()">
+                  <md-icon md-font-icon="mdi mdi-cart mdi-24px"></md-icon>
+                </md-button>
+
+            </div>
+      </md-toolbar>
+      <div ui-view flex class="view"></div>
+
+    </md-content>
+</section>

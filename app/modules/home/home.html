@@ -1,0 +1,45 @@
+      <md-card class="desc">
+        <div layout="column" flex-gt-xs="70" layout-align="center none">
+              <h1 class="info">Filter Results</h1>
+              <div ng-repeat="i in user_info_fields" class="info" >
+              <p ng-if="user[i.key]"><b>{{i.label}}  :</b> {{user[i.key]}}</p>
+              <p ng-if="!user[i.key]"><b>{{i.label}}  :</b> N/A</p>
+            </div>
+        </div>
+
+      </md-card>
+      <div layout-gt-xs="row" layout-align="space-around stretch">
+
+      <div flex-gt-xs="30">
+
+      </div>
+
+
+      <div flex-gt-xs="80" layout="row" layout-align="center center" layout-wrap>
+            <md-card flex-gt-xs="24" class="item" ng-repeat="item in items">
+              <img ng-src="{{item.picture}}" class="md-card-image" alt="user avatar">
+              <md-card-content>
+                <div layout="row" class="pad-tb" layout-align="space-between center">
+                <h4 class="pad-0">{{item.product}}</h4>
+                  <p ng-class="{avl: item.Available==true, unavl: item.Available!=true}" ng-if="item.Available==true">In Stock</p>
+                  <p ng-class="{avl: item.Available==true, unavl: item.Available!=true}" ng-if="item.Available!=true">Out Of Stock</p>
+                </div>
+
+                <p class="pad-0">{{item.about}}</p>
+
+                <div layout="row" class="pad-tb" layout-align="space-between center">
+                <div layout="column" class="pad-tb" layout-align="space-between center">
+                  <h4 class="pad-0 origPrc">₹ {{ item.price + ( item.price * item.discount  / 100) | number : 2 }}</h4>
+                  <h4 class="pad-0">₹ {{ item.price }}</h4>
+                </div>
+                <p class="discount"> {{item.discount}} % off</p>
+                </div>
+              </md-card-content>
+              <div class="md-actions center" layout="row" layout-align="end center">
+                <md-button ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
+              </div>
+            </md-card>
+          </div>
+
+
+</div>
