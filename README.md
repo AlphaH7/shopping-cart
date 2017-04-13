@@ -1,8 +1,8 @@
-# Shopping Cart - Amaze-Me
+# Shopping Cart App: Amaze-Me
 
 Dynamic Frontend Shopping app. Renders data from a json file ('Products.json') and processes in the app.
 
-# Features!
+# Features -
 
   - Stores your cart in the localStorage and calls it back on the next webpage call.
   - Adding/Deleting Items to the cart
@@ -10,7 +10,7 @@ Dynamic Frontend Shopping app. Renders data from a json file ('Products.json') a
   - Sort Items on basis of Availability / Price / Discount . 
 
 
-# How to install and run
+# How to install and run - 
   - $ git clone https://github.com/AlphaH7/shopping-cart / simply download zip / Github Desktop.
   - ``` $ npm install ```
   - ``` $ bower install ``` 
