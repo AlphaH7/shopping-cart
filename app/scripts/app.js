@@ -22,7 +22,7 @@ app.config(function($stateProvider, $mdThemingProvider, $httpProvider){
       //abstract: 'true'
     })
     .state('app.dashboard',{
-      url:'/dashboard',
+      url:'/',
       templateUrl: 'modules/home/home.html',
       controller: "homeCtrl"
 
@@ -64,7 +64,7 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
   s.showPrompt = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = dialog.prompt()
-      .title('Hi! Welcome to AM. ')
+      .title('Hi! Welcome to Amaze-Me. ')
       .textContent('May I know your name')
       .placeholder('name')
       .ariaLabel('name')

@@ -8,21 +8,27 @@ body{
 	box-shadow: 0 24px 38px rgba(0,0,0,0.25), 0 30px 30px rgba(0,0,0,0.22);
 	padding : 30px 0;
 }
+.pad-head{
+	padding: 30px 0px;
+}
 .desc{
 	background-color: #125f7b;
 	color: #333;
 	position: fixed;
 	min-width : 30vw;
-	left: 0px;
+	bottom: 0px;
 	height: 10vh;
-	margin-top: -3px;
+	right: 0px;
 	z-index: 2;
+	box-shadow: 0 24px 38px rgba(0,0,0,0.25), 0 30px 30px rgba(0,0,0,0.22);
+	border-top: rgba(255, 255, 255, 0.5) 3px solid;
+	border-left: rgba(255, 255, 255, 0.5) 3px solid;
 }
 md-toolbar{
 	z-index: 99999;
 }
-.span{
-	padding-top: 12vh;
+.container{
+	padding: 0px 50px;
 }
 .descHead{
 	color:#2c84c5;
@@ -48,9 +54,6 @@ margin: 0px 0px;
 }
 .pad-top{
 	padding-top: 22px;
-}
-.pad-small{
-	padding: 0px 10px;
 }
 md-card,md-button{
 	display: block;
@@ -313,4 +316,8 @@ md-progress-linear .md-bar {
 }
 .item{
 	width: 15vw !important;
+}
+md-input-container.md-default-theme label,
+ md-input-container.md-default-theme .md-placeholder{
+    color:#fff !important;
 }
