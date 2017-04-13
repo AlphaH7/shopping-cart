@@ -4,7 +4,7 @@ Dynamic Frontend Shopping app. Renders data from a json file ('Products.json') a
 
 # Demo
 
-  - ```http://axtest7.net16.net/AM```
+  - http://axtest7.net16.net/AM
 
 # Features -
 
