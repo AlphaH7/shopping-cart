@@ -2,6 +2,10 @@
 
 Dynamic Frontend Shopping app. Renders data from a json file ('Products.json') and processes in the app.
 
+# Demo
+
+  - ```http://axtest7.net16.net/AM```
+
 # Features -
 
   - Stores your cart in the localStorage and calls it back on the next webpage call.
@@ -15,7 +19,6 @@ Dynamic Frontend Shopping app. Renders data from a json file ('Products.json') a
   - ``` $ npm install ```
   - ``` $ bower install ``` 
   - ``` $ grunt serve ``` . It shall open a new tab of the app.
-  - Open this link - http://localhost:9000/#/app/
   - If this didnt work, you might need to install grunt seperately :```  $ npm install -g grunt-cli ``` .
 
 # -Powered By-
