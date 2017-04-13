@@ -43,7 +43,8 @@
                 </div>
               </md-card-content>
               <div class="md-actions center" layout="row" layout-align="end center">
-                <md-button class="md-primary md-raised" ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
+                {{}}
+                <md-button class="md-primary md-raised" ng-disabled="!item.Available" ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
               </div>
             </md-card>
           </div>
