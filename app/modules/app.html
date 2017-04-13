@@ -6,37 +6,32 @@
         <div layout="row" layout-align="center center"><img class="logo" src="../images/logo.png"/><h1 class="md-toolbar-tools">Amaze Me</h1></div>
       </md-toolbar>
 
-      <md-card class="profile-image-bg">
-        <md-card-title layout="column" layout-align="center center">
-          <div><img class="profile-circle" src="http://egpp.gob.bo/images/pic4.png" ></img></div>
-          <md-card-title-text>
-              <h4 class="white-text"> {{user}} </h4>
-          </md-card-title-text>
-        </md-card-title>
-      </md-card>
+
 
       <md-content>
         <p class="grey center pad-tb" ng-show="result.length==0"><i>Empty Cart</i></p>
         <md-table-container ng-show="!result.length==0">
           <md-card>
           <table  cellspacing="0" class="table" >
-            <thead >
-              <tr md-row>
-                <th colspan="3"><span>Your Shopping Cart</span></th>
-              </tr>
-            </thead>
-            <tbody md-body>
+            <h2><span class="info">Your Cart</h2>
+            <tbody class="cartRows center" md-body>
               <tr md-row ng-repeat="items in result">
                 <td>{{items.name}}</td>
                 <td class="right">₹ {{items.price | number : 2}}
                 <md-button class="md-fab md-mini md-warn" aria="removeItem" class="right" ng-click="remove(items.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button>
                 </td>
               </tr>
+              <tr>
+              <td><span class="total">Total</span></td>
+              <td> : ₹ {{total}}</td>
+              <tr>
             </tbody>
-
           </table>
         </md-card>
         </md-table-container>
+
+
+
       </md-content>
       <footer>
         <p>© 2017 Amaze Me . Rights Reserved</p>

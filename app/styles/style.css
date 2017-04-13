@@ -24,11 +24,10 @@ body{
 	border-top: rgba(255, 255, 255, 0.5) 3px solid;
 	border-left: rgba(255, 255, 255, 0.5) 3px solid;
 }
-md-toolbar{
-	z-index: 99999;
-}
+
 .container{
 	padding: 0px 50px;
+	border: 1px #dcdcdc solid;
 }
 .descHead{
 	color:#2c84c5;
@@ -156,8 +155,13 @@ md-card.table{
 	  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 td,th{
-	text-align: left;
 	border-bottom : 1px solid #d8d8d8;
+}
+.total{
+	font-size: 28px;
+	display: block;
+	color: #000;
+	padding: 15px 0px;
 }
 td{
 	padding: 10px 20px;
@@ -180,6 +184,9 @@ md-backdrop.md-opaque {
 }
 md-sidenav {
 	position: fixed;
+}
+.items{
+	border: 1px #dcdcdc solid;
 }
 .right{
 	text-align: right;
@@ -317,7 +324,18 @@ md-progress-linear .md-bar {
 .item{
 	width: 15vw !important;
 }
-md-input-container.md-default-theme label,
- md-input-container.md-default-theme .md-placeholder{
-    color:#fff !important;
+tbody.cartRows{
+	position: fixed;
+	display: block;
+	width: 100%;
+	max-height: 60vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+tr{
+	display: table;
+	width: inherit;
+}
+input.input{
+	color: #fff;
 }

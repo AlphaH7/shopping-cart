@@ -1,6 +1,6 @@
 var app = angular.module('AM',['ngMaterial','ui.router','ngAnimate']);
 
-app.config(function($stateProvider, $mdThemingProvider, $httpProvider){
+app.config(function($stateProvider, $mdThemingProvider, $httpProvider, $urlRouterProvider){
     $httpProvider.interceptors.push(function(){
       var stack = 0, loader = jQuery('.loader');
       return{
@@ -22,12 +22,11 @@ app.config(function($stateProvider, $mdThemingProvider, $httpProvider){
       //abstract: 'true'
     })
     .state('app.dashboard',{
-      url:'/',
+      url:'/home',
       templateUrl: 'modules/home/home.html',
       controller: "homeCtrl"
-
     })
-  ;
+  ;$urlRouterProvider.when('','app/home');
 
   $mdThemingProvider.definePalette('AM', {
     '50': '#051a22',
@@ -55,8 +54,13 @@ app.config(function($stateProvider, $mdThemingProvider, $httpProvider){
     .primaryPalette('AM');
 
 });
-app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',function(s,sNav,http,dialog,state){
+app.run(function($rootScope){
 
+  $rootScope.result = localStorage.getItem('AM-cart') ? JSON.parse(localStorage.getItem('AM-cart')) : [];
+  $rootScope.total = localStorage.getItem('AM-total') ? localStorage.getItem('AM-total') : 0;
+
+});
+app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',function(s,sNav,http,dialog,state){
   s.toggleMenu = function(){
     sNav('right').toggle();
   }
@@ -75,25 +79,14 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
 
     dialog.show(confirm).then(function(r) {
       s.user = r;
-      if(localStorage.getItem('AM-cart')){
-        var savedCart = localStorage.getItem('AM-cart');
-        console.log(savedCart)
-        s.result = JSON.parse(savedCart);
-        console.log(s.result)
-        }else{
-        s.result=[];
-        }
     }, function() {
       s.showPrompt();
     });
   };
   s.showPrompt();
 
-
-
-
-
   s.cart = [];
+
   s.add = function(id,x,price){
     console.log(id + '/'+ price)
     s.cart.push({'name': x , 'price': price , 'id': id , 'quantity': 1});
@@ -112,8 +105,15 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
         s.result.push({'name':i,'price':newObj[i]});
     }
     console.log(s.result);
+    s.totalPrice();
     localStorage.setItem('AM-cart', JSON.stringify(s.result));
+    localStorage.setItem('AM-total',s.total);
   }
+  s.totalPrice = function(){
+            s.total = 0;
+            for(count=0;count<s.result.length;count++){
+                s.total += parseInt(s.result[count].price,10);
+            }};
   s.remove = function(name){
   var index = -1;
   var comArr = eval( s.result );
@@ -128,6 +128,8 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
   }
   s.result.splice( index, 1 );
   console.log(s.result)
+  s.totalPrice();
   localStorage.setItem('AM-cart', JSON.stringify(s.result));
+  localStorage.setItem('AM-total',s.total);
   };
 }]);
