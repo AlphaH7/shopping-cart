@@ -16,3 +16,6 @@ Dynamic Frontend Shopping app. Renders data from a json file ('Products.json') a
   - ``` $ bower install ``` 
   - ``` $ grunt serve ``` . It shall open a new tab of the app.
   - If this didnt work, you might need to install grunt seperately :```  $ npm install -g grunt-cli ``` .
+
+# -Powered By-
+![N|Solid](http://www.nodejsconnect.com/sites/default/files/nodejsconnect-icon-angularjs.jpg )
