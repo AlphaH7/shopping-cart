@@ -56,6 +56,7 @@ app.config(function($stateProvider, $mdThemingProvider, $httpProvider){
 
 });
 app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',function(s,sNav,http,dialog,state){
+
   s.toggleMenu = function(){
     sNav('right').toggle();
   }
@@ -63,7 +64,7 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
   s.showPrompt = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = dialog.prompt()
-      .title('Hi! welcome to AM. ')
+      .title('Hi! Welcome to AM. ')
       .textContent('May I know your name')
       .placeholder('name')
       .ariaLabel('name')
@@ -72,15 +73,27 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
       .ok('Okay!')
       .cancel('Cancel');
 
-    dialog.show(confirm).then(function(result) {
-      s.user = result;
+    dialog.show(confirm).then(function(r) {
+      s.user = r;
+      if(localStorage.getItem('AM-cart')){
+        var savedCart = localStorage.getItem('AM-cart');
+        console.log(savedCart)
+        s.result = JSON.parse(savedCart);
+        console.log(s.result)
+        }else{
+        s.result=[];
+        }
     }, function() {
       s.showPrompt();
     });
   };
   s.showPrompt();
-  s.cart=[];
 
+
+
+
+
+  s.cart = [];
   s.add = function(id,x,price){
     console.log(id + '/'+ price)
     s.cart.push({'name': x , 'price': price , 'id': id , 'quantity': 1});
@@ -94,12 +107,12 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
         newObj[item.name] += item.price;
     }
     console.log(newObj);
-    result = {};
-    s.result = [];
+    s.result =[]
     for(i in newObj){
         s.result.push({'name':i,'price':newObj[i]});
     }
-    console.log(result);
+    console.log(s.result);
+    localStorage.setItem('AM-cart', JSON.stringify(s.result));
   }
   s.remove = function(name){
   var index = -1;
@@ -115,16 +128,6 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
   }
   s.result.splice( index, 1 );
   console.log(s.result)
-
+  localStorage.setItem('AM-cart', JSON.stringify(s.result));
   };
 }]);
-
-/*app.run(function($rootScope, $state){
-    $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
-        if( ['login','forgot_password'].indexOf(toState.name) === -1 && !localStorage.getItem('alist_auth_token')){
-            e.preventDefault();
-            $state.go('login');
-        }
-    });
-});
-*/

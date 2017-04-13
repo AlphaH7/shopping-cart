@@ -1,10 +1,15 @@
-      <md-card class="desc">
-        <div layout="column" flex-gt-xs="70" layout-align="center none">
-              <h1 class="info">Filter Results</h1>
-              <div ng-repeat="i in user_info_fields" class="info" >
-              <p ng-if="user[i.key]"><b>{{i.label}}  :</b> {{user[i.key]}}</p>
-              <p ng-if="!user[i.key]"><b>{{i.label}}  :</b> N/A</p>
-            </div>
+      <md-card class="desc center white-text">
+        <div layout="column">
+              <h1>Filter Results</h1>
+              <div flex-gt-xs="80" layout="row" layout-align="center center" >
+                        <md-select ng-model="filter" placeholder="Select" class="md-no-underline">
+                          <md-option value="Available">Availability</md-option>
+                          <md-option value="discount">Discount</md-option>
+                          <md-option value="price">Price</md-option>
+                        </md-select>
+
+                        <md-button class="md-primary" ng-click="sort(filter)">Filter</md-button>
+              </div>
         </div>
 
       </md-card>
@@ -16,7 +21,7 @@
 
 
       <div flex-gt-xs="80" layout="row" layout-align="center center" layout-wrap>
-            <md-card flex-gt-xs="24" class="item" ng-repeat="item in items">
+            <md-card flex-gt-xs="24" class="item" ng-repeat="item in items |orderBy:sortKey:reverse|filter:search">
               <img ng-src="{{item.picture}}" class="md-card-image" alt="user avatar">
               <md-card-content>
                 <div layout="row" class="pad-tb" layout-align="space-between center">
@@ -36,7 +41,7 @@
                 </div>
               </md-card-content>
               <div class="md-actions center" layout="row" layout-align="end center">
-                <md-button ng-click="add(item.id, item.product , item.price) || revise(cart) || getTotal()">Add to Cart</md-button>
+                <md-button ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
               </div>
             </md-card>
           </div>
