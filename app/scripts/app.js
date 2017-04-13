@@ -1,4 +1,4 @@
-var app = angular.module('AM',['ngMaterial','ui.router','ngMask','ngAnimate']);
+var app = angular.module('AM',['ngMaterial','ui.router','ngAnimate']);
 
 app.config(function($stateProvider, $mdThemingProvider, $httpProvider){
     $httpProvider.interceptors.push(function(){

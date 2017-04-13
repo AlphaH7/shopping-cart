@@ -1,27 +1,28 @@
-      <md-card class="desc center white-text">
-        <div layout="column">
-              <h1>Filter Results</h1>
-              <div flex-gt-xs="80" layout="row" layout-align="center center" >
-                        <md-select ng-model="filter" placeholder="Select" class="md-no-underline">
-                          <md-option value="Available">Availability</md-option>
-                          <md-option value="discount">Discount</md-option>
-                          <md-option value="price">Price</md-option>
-                        </md-select>
 
-                        <md-button class="md-primary" ng-click="sort(filter)">Filter</md-button>
-              </div>
-        </div>
+  <div layout="row" class="desc center white-text" layout-align="space-around center">
+      <md-input-container style="margin-top: 33px;">
+        <label>Search</label>
+        <input ng-model="search" >
+      </md-input-container>
+        <div layout="row" layout-align="space-between center" >
+                  <md-select ng-model="filter" placeholder="Select" class="md-no-underline fltr">
+                    <md-option value="Available">Availability</md-option>
+                    <md-option value="discount">Discount</md-option>
+                    <md-option value="price">Price</md-option>
+                  </md-select>
 
-      </md-card>
-      <div layout-gt-xs="row" layout-align="space-around stretch">
+                  <md-button class="md-raised" ng-click="sort(filter)">Filter</md-button>
+          </div>
+  </div>
 
-      <div flex-gt-xs="30">
+      <div layout-gt-xs="row" layout-align="space-around stretch" layout-wrap>
+      <div flex-gt-xs="100" class="span">
 
       </div>
 
 
-      <div flex-gt-xs="80" layout="row" layout-align="center center" layout-wrap>
-            <md-card flex-gt-xs="24" class="item" ng-repeat="item in items |orderBy:sortKey:reverse|filter:search">
+      <div flex-gt-xs="100" layout="row" layout-align="center center" layout-wrap>
+            <md-card flex-gt-xs="23" flex-gt-sm="23" flex-xs="100" class="item" ng-repeat="item in items |orderBy:sortKey:reverse|filter:search">
               <img ng-src="{{item.picture}}" class="md-card-image" alt="user avatar">
               <md-card-content>
                 <div layout="row" class="pad-tb" layout-align="space-between center">
@@ -41,7 +42,7 @@
                 </div>
               </md-card-content>
               <div class="md-actions center" layout="row" layout-align="end center">
-                <md-button ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
+                <md-button class="md-primary md-raised" ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
               </div>
             </md-card>
           </div>

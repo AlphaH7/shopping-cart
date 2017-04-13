@@ -28,8 +28,9 @@
             <tbody md-body>
               <tr md-row ng-repeat="items in result">
                 <td>{{items.name}}</td>
-                <td class="right">₹ {{items.price | number : 2}}</td>
-                <td><md-button class="md-fab md-mini md-warn" class="right" ng-click="remove(items.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button></td>
+                <td class="right">₹ {{items.price | number : 2}}
+                <md-button class="md-fab md-mini md-warn" aria="removeItem" class="right" ng-click="remove(items.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button>
+                </td>
               </tr>
             </tbody>
 

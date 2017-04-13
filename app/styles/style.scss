@@ -9,12 +9,20 @@ body{
 	padding : 30px 0;
 }
 .desc{
-	background-color: #999;
+	background-color: #125f7b;
 	color: #333;
-	height: 88vh;
 	position: fixed;
+	min-width : 30vw;
 	left: 0px;
-	width: 30vw;
+	height: 10vh;
+	margin-top: -3px;
+	z-index: 2;
+}
+md-toolbar{
+	z-index: 99999;
+}
+.span{
+	padding-top: 12vh;
 }
 .descHead{
 	color:#2c84c5;
@@ -64,6 +72,9 @@ md-card,md-button{
 @media screen and (max-width:531px) {
 	.info{
 		padding: 0 15px;
+	}
+	.desc{
+		min-width : 100vw;
 	}
 	.mob-center{
 		text-align: center;
@@ -172,7 +183,6 @@ md-sidenav {
 	align-items: right;
 	align-self: right;
 	align-content: right;
-	float: right;
 }
 .pad-tb{
 		padding: 10px 0px;
