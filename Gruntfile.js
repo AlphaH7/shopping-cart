@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
-    aws: grunt.file.readJSON("credentials.json"),
+    /*aws: grunt.file.readJSON("credentials.json"),
     s3: {
       options: {
         accessKeyId: "<%= aws.accessKeyId %>",
@@ -42,7 +42,7 @@ module.exports = function (grunt) {
         cwd: "dist/",
         src: "**"
       }
-    },
+    },*/
     // Project settings
     yeoman: appConfig,
 
