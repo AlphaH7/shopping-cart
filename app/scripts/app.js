@@ -60,7 +60,7 @@ app.run(function($rootScope){
   $rootScope.total = localStorage.getItem('AM-total') ? localStorage.getItem('AM-total') : 0;
 
 });
-app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',function(s,sNav,http,dialog,state){
+app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state','$mdToast',function(s,sNav,http,dialog,state,toast){
   s.toggleMenu = function(){
     sNav('right').toggle();
   }
@@ -91,6 +91,13 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
     console.log(id + '/'+ price)
     s.cart.push({'name': x , 'price': price , 'id': id , 'quantity': 1});
     console.log(s.cart)
+    toast.show(
+      toast.simple()
+        .textContent(x + "has been added to your cart")
+        .position('bottom left')
+        .hideDelay(3000)
+        .theme('Alist-web')
+    );
     var newObj = {};
     for(i in s.cart){
      var item = s.cart[i];
@@ -117,6 +124,13 @@ app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state',fun
   s.remove = function(name){
   var index = -1;
   var comArr = eval( s.result );
+  toast.show(
+    toast.simple()
+      .textContent(name + "has been romoved from your cart")
+      .position('bottom left')
+      .hideDelay(3000)
+      .theme('Alist-web')
+  );
   for( var i = 0; i < comArr.length; i++ ) {
         if( comArr[i].name === name ) {
             index = i;

@@ -187,6 +187,7 @@ md-sidenav {
 }
 .items{
 	border: 1px #dcdcdc solid;
+	margin-bottom: 100px;
 }
 .right{
 	text-align: right;
