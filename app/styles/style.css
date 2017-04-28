@@ -80,6 +80,9 @@ md-card,md-button{
 	.info{
 		padding: 0 15px;
 	}
+	.container {
+    padding: 0px 10px;
+	}
 	.desc{
 		min-width : 100vw;
 	}
