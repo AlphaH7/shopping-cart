@@ -11,11 +11,16 @@ body{
 .pad-head{
 	padding: 30px 0px;
 }
+md-toast{
+	position: fixed;
+	bottom: 8px;
+	left: 8px;
+}
 .desc{
 	background-color: #125f7b;
 	color: #333;
 	position: fixed;
-	min-width : 30vw;
+	min-width : 25vw;
 	bottom: 0px;
 	height: 10vh;
 	right: 0px;
