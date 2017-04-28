@@ -5,13 +5,11 @@
         <input ng-model="search" class="input">
       </md-input-container>
         <div layout="row" layout-align="space-between center" >
-                  <md-select ng-model="filter" placeholder="Relevance" class="md-no-underline fltr">
+                  <md-select ng-model="filter" placeholder="Relevance" ng-change="sort(filter)" class="md-no-underline fltr">
                     <md-option value="Available">Availability</md-option>
                     <md-option value="discount">Discount</md-option>
                     <md-option value="price">Price</md-option>
                   </md-select>
-
-                  <md-button class="md-raised" ng-click="sort(filter)">Filter</md-button>
           </div>
   </div>
 
