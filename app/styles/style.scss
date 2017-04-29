@@ -18,17 +18,16 @@ md-toast{
 	left: 8px;
 }
 .desc{
-	background-color: #125f7b;
+	background-color:#bfbfbf;
 	color: #333;
-	position: fixed;
 	min-width : 25vw;
-	bottom: 0px;
-	height: 10vh;
-	left: 0px;
 	z-index: 2;
-	box-shadow: 0 24px 38px rgba(0,0,0,0.25), 0 30px 30px rgba(0,0,0,0.22);
-	border-top: rgba(255, 255, 255, 0.5) 3px solid;
-	border-left: rgba(255, 255, 255, 0.5) 3px solid;
+}
+.box{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.desc1{
+	height: inherit !important;
 }
 .container{
 	padding: 0px 30px;
@@ -54,7 +53,9 @@ margin: 0px 0px;
 }
 .view{
 	position:relative;
-	padding-top: 8vh;
+}
+.border{
+  border: 1px solid #fff;
 }
 .pad-top{
 	padding-top: 22px;
@@ -91,6 +92,8 @@ md-card,md-button{
 	}
 	.desc{
 		min-width : 100vw;
+  	position: fixed;
+    bottom: 0px;
 	}
 	.mob-center{
 		text-align: center;
@@ -172,10 +175,17 @@ td,th{
 	border-bottom : 1px solid #d8d8d8;
 }
 .total{
-	font-size: 28px;
+	font-size: 22px;
 	display: block;
 	color: #000;
 	padding: 15px 0px;
+}
+.totalText{
+	font-size: 26px;
+	display: block;
+	color: #4f90c1;
+	padding: 15px 0px;
+  font-weight: bold;
 }
 td{
   font-size: 14px;
@@ -201,7 +211,6 @@ md-sidenav {
 	position: fixed;
 }
 .items{
-	border: 1px #dcdcdc solid;
 	margin-bottom: 100px;
 }
 .right{
@@ -341,14 +350,17 @@ md-progress-linear .md-bar {
 }
 .fixedNav{
   position: fixed;
-  height: 10vh;
+  height: 7vh;
 }
 .cart{
-  height: calc(100% - 10vh) !important;
+  height: calc(100% - 7vh) !important;
+  height: -webkit-calc(100% - 7vh) !important;
+  height: -moz-calc(100% - 7vh) !important;
   position: fixed;
   right: 0px;
-  width: 30%;
+  width: 30vw;
   overflow: scroll;
+  background-color: #fff;
 }
 tbody.cartRows{
 	position: fixed;
@@ -362,9 +374,88 @@ tr{
 	display: table;
 	width: inherit;
 }
+button.md-fab.md-fab.md-mini.md-warn.md-button.md-ink-ripple {
+  background-color: #777;
+}
 input.input{
 	color: #fff;
 }
 .begin{
-  margin-top : calc(100% - calc(100% - 10vh) ) ;
+  margin-top : 7vh;
+}
+.cartBtn{
+  position: fixed;
+  bottom: 9px;
+  right: 9px;
+}
+.prod{
+  background-color: 		#bfbfbf;
+}
+
+
+.box-one.ng-hide-add {
+  -webkit-animation:0.75s hide;
+  animation:0.75s hide;
+}
+
+@keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity:0;
+    transform: scale(0.75);
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity:1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity:0;
+    transform: scale(0.75);
+  }
+}
+
+
+.box-one.ng-hide-remove {
+  -webkit-animation:0.75s show;
+  animation:0.75s show;
+}
+
+@keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.75);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity:0;
+    transform: scale(0.75);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity:1;
+    transform: scale(1);
+  }
 }

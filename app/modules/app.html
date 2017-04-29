@@ -22,9 +22,9 @@
                 <md-button class="md-fab md-mini md-warn" aria="removeItem" class="right" ng-click="remove(purchase.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button>
                </td>
               </tr>
-              <tr>
+              <tr style="width: 100% !important" >
               <td><span class="total">Total</span></td>
-              <td> : ₹ {{total}}</td>
+              <td><span  class="totalText"> : ₹ {{total}} </span></td>
               <tr>
             </tbody>
           </table>
@@ -48,13 +48,13 @@
               <span flex></span>
               <h3 md-truncate>{{user}}</h3>
 
-                <md-button class="md-icon-button" aria-label="side-nav" ng-click="toggleMenu()">
+                <md-button class="md-icon-button" aria-label="side-nav" hide-gt-sm ng-click="toggleMenu()">
                   <md-icon md-font-icon="mdi mdi-cart mdi-24px"></md-icon>
                 </md-button>
 
             </div>
       </md-toolbar>
-      <div ui-view flex class="view"></div>
+      <div ui-view class="view" flex></div>
 
     </md-content>
 </section>
