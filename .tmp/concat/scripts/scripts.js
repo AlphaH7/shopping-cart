@@ -1,6 +1,6 @@
 var app = angular.module('AM',['ngMaterial','ui.router','ngAnimate']);
 
-app.config(function($stateProvider, $mdThemingProvider, $httpProvider, $urlRouterProvider){
+app.config(["$stateProvider", "$mdThemingProvider", "$httpProvider", "$urlRouterProvider", function($stateProvider, $mdThemingProvider, $httpProvider, $urlRouterProvider){
     $httpProvider.interceptors.push(function(){
       var stack = 0, loader = jQuery('.loader');
       return{
@@ -53,17 +53,20 @@ app.config(function($stateProvider, $mdThemingProvider, $httpProvider, $urlRoute
   $mdThemingProvider.theme('default')
     .primaryPalette('AM');
 
-});
-app.run(function($rootScope){
+}]);
+app.run(["$rootScope", function($rootScope){
 
   $rootScope.result = localStorage.getItem('AM-cart') ? JSON.parse(localStorage.getItem('AM-cart')) : [];
   $rootScope.total = localStorage.getItem('AM-total') ? localStorage.getItem('AM-total') : 0;
 
-});
+}]);
 app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state','$mdToast','$rootScope',function(s,sNav,http,dialog,state,toast,rootScope){
   s.toggleMenu = function(){
     sNav('right').toggle();
-  };
+  }
+  rootScope.isNavOpen = function(){
+  return sNav('right').isOpen();
+}
 
 http.get('products.json').then(
   function(r){
@@ -152,3 +155,14 @@ http.get('products.json').then(
   localStorage.setItem('AM-total',s.total);
   };
 }]);
+
+angular.module('AM').controller('homeCtrl',['$scope','$http','$mdToast',function(s,http,toast){
+
+
+  s.sort = function(){
+    console.log(s.filter);
+    s.sortKey = s.filter;   //set the sortKey to the param passed
+    s.reverse = !s.reverse; //if true make it false and vice versa
+  }
+}]);
+

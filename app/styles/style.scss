@@ -1,5 +1,6 @@
 body{
-	font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 1px;
 	overflow-x: hidden;
 	}
 
@@ -23,15 +24,14 @@ md-toast{
 	min-width : 25vw;
 	bottom: 0px;
 	height: 10vh;
-	right: 0px;
+	left: 0px;
 	z-index: 2;
 	box-shadow: 0 24px 38px rgba(0,0,0,0.25), 0 30px 30px rgba(0,0,0,0.22);
 	border-top: rgba(255, 255, 255, 0.5) 3px solid;
 	border-left: rgba(255, 255, 255, 0.5) 3px solid;
 }
-
 .container{
-	padding: 0px 50px;
+	padding: 0px 30px;
 	border: 1px #dcdcdc solid;
 }
 .descHead{
@@ -68,6 +68,8 @@ md-card,md-button{
 	 height:100%;
 	 width: 100%;
  }
+
+
 }
 .account-info-input{
 	padding: 0 80px;
@@ -80,6 +82,10 @@ md-card,md-button{
 	.info{
 		padding: 0 15px;
 	}
+  .md-block{
+    display: block !important;
+    width: 100vw !important;
+  }
 	.container {
     padding: 0px 10px;
 	}
@@ -172,7 +178,8 @@ td,th{
 	padding: 15px 0px;
 }
 td{
-	padding: 10px 20px;
+  font-size: 14px;
+	padding: 6px 20px;
 	color: #666;
 }
 th{
@@ -244,7 +251,9 @@ md-sidenav {
 .pad-rl{
 		padding: 0px 30px;
 }
-
+.md-block{
+  min-width: 20vw !important;
+}
 md-sidenav{
 	width: 40vw !important;
 }
@@ -330,8 +339,16 @@ md-progress-linear .md-bar {
 	width: 100%;
 	z-index: 100;
 }
-.item{
-	width: 15vw !important;
+.fixedNav{
+  position: fixed;
+  height: 10vh;
+}
+.cart{
+  height: calc(100% - 10vh) !important;
+  position: fixed;
+  right: 0px;
+  width: 30%;
+  overflow: scroll;
 }
 tbody.cartRows{
 	position: fixed;
@@ -347,4 +364,7 @@ tr{
 }
 input.input{
 	color: #fff;
+}
+.begin{
+  margin-top : calc(100% - calc(100% - 10vh) ) ;
 }

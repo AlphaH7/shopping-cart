@@ -1,6 +1,6 @@
 <section  ng-controller="appCtrl" layout="row" layout-align="start stretch" class="full-height">
 
-    <md-sidenav  class="md-sidenav-right" md-component-id="right" md-whiteframe="14">
+    <md-sidenav   class="md-sidenav-right" md-component-id="right" md-whiteframe="14">
 
       <md-toolbar layout="column" layout-align="center center"  class="md-hue-1">
         <div layout="row" layout-align="center center"><img class="logo" src="logo.png"/><h1 class="md-toolbar-tools">Amaze Me</h1></div>
@@ -13,13 +13,14 @@
         <md-table-container ng-show="!result.length==0">
           <md-card>
           <table  cellspacing="0" class="table" >
-            <h2><span class="info">Your Cart</h2>
+            <h2><span class="info">Your Shopping Cart</h2>
             <tbody class="cartRows center" md-body>
-              <tr md-row ng-repeat="items in result">
-                <td>{{items.name}}</td>
-                <td class="right">₹ {{items.price | number : 2}}
-                <md-button class="md-fab md-mini md-warn" aria="removeItem" class="right" ng-click="remove(items.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button>
-                </td>
+              <tr md-row ng-repeat="purchase in result">
+                <td style="width: 30% !important" >{{purchase.name}}</td>
+                <td style="width: 10% !important"  ng-repeat="item in items" ng-show="item.product==purchase.name">x{{ purchase.price / item.price | number : 0}}</td>
+                <td style="width: 60% !important"  class="right">₹ {{purchase.price | number : 2}}
+                <md-button class="md-fab md-mini md-warn" aria="removeItem" class="right" ng-click="remove(purchase.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button>
+               </td>
               </tr>
               <tr>
               <td><span class="total">Total</span></td>
@@ -40,7 +41,7 @@
 
     <md-content layout="column" layout-align="start stretch" flex>
 
-      <md-toolbar style="position: fixed;" class="md-hue-1">
+      <md-toolbar class="md-hue-1 fixedNav">
             <div class="md-toolbar-tools">
 
               <h2 flex md-truncate><img class="logo" src="logo.png"/></h2>
