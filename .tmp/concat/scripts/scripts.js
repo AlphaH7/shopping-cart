@@ -29,20 +29,20 @@ app.config(["$stateProvider", "$mdThemingProvider", "$httpProvider", "$urlRouter
   ;$urlRouterProvider.when('','app/home');
 
   $mdThemingProvider.definePalette('AM', {
-    '50': '#051a22',
-    '100': '#082b38',
-    '200': '#0c3c4e',
-    '300': '#0f4e64',
-    '400': '#125f7b',
-    '500': '#167091',
-    '600': '#1c92bd',
-    '700': '#20a3d3',
-    '800': '#2db0e0',
-    '900': '#43b8e3',
-    'A100': '#1c92bd',
-    'A200': '#1981a7',
-    'A400': '#167091',
-    'A700': '#59c0e6',
+    '50': '#31658b',
+    '100': '#38739e',
+    '200': '#3f81b1',
+    '300': '#4b8dbf',
+    '400': '#5d99c6',
+    '500': '#70a5cc',
+    '600': '#96bdda',
+    '700': '#a9c9e0',
+    '800': '#bbd4e7',
+    '900': '#cee0ee',
+    'A100': '#96bdda',
+    'A200': '#83b1d3',
+    'A400': '#70a5cc',
+    'A700': '#e1ecf4',
     'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
                                         // on this palette should be dark or light
 
@@ -63,10 +63,7 @@ app.run(["$rootScope", function($rootScope){
 app.controller('appCtrl',['$scope','$mdSidenav','$http','$mdDialog','$state','$mdToast','$rootScope',function(s,sNav,http,dialog,state,toast,rootScope){
   s.toggleMenu = function(){
     sNav('right').toggle();
-  }
-  rootScope.isNavOpen = function(){
-  return sNav('right').isOpen();
-}
+  };
 
 http.get('products.json').then(
   function(r){

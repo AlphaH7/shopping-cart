@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div layout="row" layout-align="center center" class="begin prod">
+    <div layout="row" layout-align="center center" class="begin prod pad-top">
         <div flex-gt-sm="70" layout-gt-xs="column" layout-align="space-around stretch" layout-wrap>
 
         <div layout="row" layout-align="center center" class="items" layout-wrap>
@@ -81,4 +81,18 @@
           <div flex="30" layout-gt-xs="row" hide-xs hide-sm layout-align="space-around stretch" class="container" layout-wrap>
           </div>
 
+          </div>
+
+          <div layout="row" layout-align="space-around center" class="mobFilter" hide-gt-xs>
+              <md-input-container style="margin-top: 33px;">
+                <label>Search</label>
+                <input ng-model="search" class="input">
+              </md-input-container>
+                <div layout="row" layout-align="space-between center" >
+                          <md-select ng-model="filter" placeholder="Relevance" ng-change="sort(filter)" class="md-no-underline fltr">
+                            <md-option value="Available">Availability</md-option>
+                            <md-option value="discount">Discount</md-option>
+                            <md-option value="price">Price</md-option>
+                          </md-select>
+                  </div>
           </div>

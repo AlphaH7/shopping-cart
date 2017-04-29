@@ -556,11 +556,20 @@ input.input {
 }
 
 /* line 391, ../../app/styles/style.scss */
+.mobFilter {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #777;
+  height: 10vh;
+}
+
+/* line 398, ../../app/styles/style.scss */
 .prod {
   background-color: #bfbfbf;
 }
 
-/* line 396, ../../app/styles/style.scss */
+/* line 403, ../../app/styles/style.scss */
 .box-one.ng-hide-add {
   animation: 0.75s hide;
 }
@@ -578,7 +587,7 @@ input.input {
     transform: scale(0.75);
   }
 }
-/* line 430, ../../app/styles/style.scss */
+/* line 437, ../../app/styles/style.scss */
 .box-one.ng-hide-remove {
   animation: 0.75s show;
 }
