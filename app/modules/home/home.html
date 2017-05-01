@@ -1,10 +1,10 @@
 
 
 
-  <div flex="30" layout-gt-xs="column" layout-align="start stretch" hide-xs hide-sm class="cart begin" ng-class="{'prod border' : !cart}">
-    <div layout="column" class="desc center white-text" ng-class="{'desc1' : !cart}" layout-align="center center">
-    <p class="center"> search and sort filter</p>
-    <div layout="row" layout-align="space-around center">
+  <div flex="30" ng-init="(discMin= 0); (priceMin= 0) ; (discMax= 100); (priceMax= 4000) " layout-gt-xs="column" layout-align="start stretch" hide-xs hide-sm class="cart begin" ng-class="{'prod border' : !cart}">
+    <div  layout="column" class="desc center white-text" ng-class="{'desc1' : !cart}" layout-align="center center">
+    <p  ng-show="!cart" class="center box-one">Filter your search</p>
+    <div ng-show="!cart" layout="row" layout-align="space-around center">
         <md-input-container style="margin-top: 33px;">
           <label>Search</label>
           <input ng-model="search" class="input">
@@ -17,18 +17,46 @@
                     </md-select>
             </div>
     </div>
-    <md-button class="md-fab md-primary md-hue-1 box-one" ng-show="!cart" ng-click="cart = !cart" aria-label="Profile">
+    <div ng-show="!cart" layout="row" class="center white-text block width100 box-one" layout-align="space-between center">
+      <md-slider-container layout="row" layout-align="space-around center">
+        <span flex="30">Min. budget</span>
+        <md-slider flex="55" min="0" max="4000" class="md-primary" ng-model="priceMin" aria-label="red" id="red-slider">
+        </md-slider>
+        <md-input-container flex="15" class="block">
+          <input flex type="number" min="0" max="4000"  ng-model="priceMin" aria-label="priceMin" aria-controls="priceMin-slider">
+        </md-input-container>
+      </md-slider-container>
+  </div>
+
+    <div ng-show="!cart" layout="row" class="center white-text block width100 box-one" layout-align="space-around center">
+      <md-slider-container layout="row" layout-align="space-around center">
+        <span flex="30">Max. budget</span>
+        <md-slider flex="55" min="0" max="4000" class="md-primary" ng-model="priceMax" aria-label="red" id="red-slider">
+        </md-slider>
+        <md-input-container flex="15" class="block">
+          <input flex type="number" min="0" max="4000"  ng-model="priceMax" aria-label="priceMax" aria-controls="priceMax-slider">
+        </md-input-container>
+      </md-slider-container>
+  </div>
+
+
+    <md-button class="md-fab md-primary md-hue-1 box-one cartBtn" ng-show="!cart" ng-click="cart = !cart" aria-label="Profile">
       <md-icon md-font-icon="mdi mdi-cart mdi-24px"></md-icon>
     </md-button>
+
+    <p  ng-show="cart" class="center md-primary box-one" >  <md-button class="md-primary md-hue-1 box-one "  ng-click="cart = !cart" aria-label="Profile">
+        <md-icon md-font-icon="mdi mdi-filter-outline mdi-24px"></md-icon> Filter your search
+      </md-button></p>
   </div>
+
+
+
+
+
 
       <div ng-show="cart" class="box-one">
         <table ng-show="cart" class="table box-one" ng-init="cart = true">
-          <div layout="row" layout-align="space-between center">
             <h2 ><span class="info">Your Shopping Cart</h2>
-              <md-button class=" md-mini md-primary" aria="removeItem" class="right" ng-click="cart = !cart">Minimize Cart</md-button>
-
-          </div>
 
           <p ng-show="result.length==0" class="grey center pad-tb" ><i>Empty Cart</i></p>
           <tbody ng-show="!result.length==0" class=" center" md-body>
@@ -51,8 +79,9 @@
     <div layout="row" layout-align="center center" class="begin prod pad-top">
         <div flex-gt-sm="70" layout-gt-xs="column" layout-align="space-around stretch" layout-wrap>
 
-        <div layout="row" layout-align="center center" class="items" layout-wrap>
-              <md-card div data-aos="fade-up" data-aos-anchor-placement="top-center" class="item md-block" ng-repeat="item in items |orderBy:sortKey:reverse|filter:search">
+        <div layout="row" layout-align="center center" class="items" layout-wrap >
+          <span ng-repeat="item in items |orderBy:sortKey:reverse|filter:search" ng-show="priceMax > item.price">
+              <md-card class="item md-block" ng-show="priceMin < item.price" >
                 <img ng-src="{{item.picture}}" class="md-card-image" alt="user avatar">
                 <md-card-content>
                   <div layout="row" class="pad-tb" layout-align="space-between center">
@@ -65,7 +94,7 @@
 
                   <div layout="row" class="pad-tb" layout-align="space-between center">
                   <div layout="column" class="pad-tb" layout-align="space-between center">
-                    <h4 class="pad-0 origPrc">₹ {{ item.price + ( item.price * item.discount  / 100) | number : 2 }}</h4>
+                    <h4 class="pad-0 origPrc">₹ {{ item.price + ( item.price * item.discount  / 100 | number : 2) }}</h4>
                     <h4 class="pad-0">₹ {{ item.price }}</h4>
                   </div>
                   <p class="discount"> {{item.discount}} % off</p>
@@ -76,6 +105,7 @@
                   <md-button class="md-primary md-raised" ng-disabled="!item.Available" ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
                 </div>
               </md-card>
+            </span>
             </div>
           </div>
 

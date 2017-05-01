@@ -161,5 +161,6 @@ angular.module('AM').controller('homeCtrl',['$scope','$http','$mdToast',function
     s.sortKey = s.filter;   //set the sortKey to the param passed
     s.reverse = !s.reverse; //if true make it false and vice versa
   }
+
 }]);
 

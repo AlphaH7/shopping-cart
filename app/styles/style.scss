@@ -40,8 +40,8 @@ md-toast{
 	font-size: 22px;
 }
 .pad-0{
-padding:0px 0px;
-margin: 0px 0px;
+padding:0px 0px !important;
+margin: 0px 0px !important;
 }
 .info{
 	padding-left: 20px;
@@ -225,6 +225,12 @@ md-sidenav {
 	align-self: right;
 	align-content: right;
 }
+.item{
+  padding-bottom: 3px;
+}
+.cartBtn{
+  margin: 60px;
+}
 .pad-tb{
 		padding: 10px 0px;
 }
@@ -268,6 +274,18 @@ md-sidenav {
 }
 .md-block{
   min-width: 20vw !important;
+}
+.block{
+  display:block !important;
+}
+.width100{
+  width: 100% !important;
+}
+md-slider-container {
+  padding: 0px 9px;
+}
+md-slider-container md-input-container input[type=number]{
+  padding-left: 0px;
 }
 md-sidenav{
 	width: 40vw !important;
@@ -403,8 +421,8 @@ input.input{
 
 
 .box-one.ng-hide-add {
-  -webkit-animation:0.75s hide;
-  animation:0.75s hide;
+  -webkit-animation:0.25 hide;
+  animation:0.25 hide;
 }
 
 @keyframes hide {

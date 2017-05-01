@@ -62,8 +62,8 @@ md-toast {
 
 /* line 42, ../../app/styles/style.scss */
 .pad-0 {
-  padding: 0px 0px;
-  margin: 0px 0px;
+  padding: 0px 0px !important;
+  margin: 0px 0px !important;
 }
 
 /* line 46, ../../app/styles/style.scss */
@@ -337,11 +337,21 @@ md-sidenav {
 }
 
 /* line 228, ../../app/styles/style.scss */
+.item {
+  padding-bottom: 3px;
+}
+
+/* line 231, ../../app/styles/style.scss */
+.cartBtn {
+  margin: 60px;
+}
+
+/* line 234, ../../app/styles/style.scss */
 .pad-tb {
   padding: 10px 0px;
 }
 
-/* line 232, ../../app/styles/style.scss */
+/* line 238, ../../app/styles/style.scss */
 .avl, .unavl, .discount {
   padding: 0px 5px !important;
   border-radius: 15px;
@@ -350,25 +360,25 @@ md-sidenav {
   background-color: #7ac5cd;
 }
 
-/* line 239, ../../app/styles/style.scss */
+/* line 245, ../../app/styles/style.scss */
 .origPrc {
   text-decoration: line-through;
   font-size: 12px;
   color: #999;
 }
 
-/* line 244, ../../app/styles/style.scss */
+/* line 250, ../../app/styles/style.scss */
 .discount {
   color: #218197;
   background-color: #fff;
 }
 
-/* line 248, ../../app/styles/style.scss */
+/* line 254, ../../app/styles/style.scss */
 .unavl {
   background-color: #de3652;
 }
 
-/* line 251, ../../app/styles/style.scss */
+/* line 257, ../../app/styles/style.scss */
 .dCard, .paypal {
   background-color: #acde9d;
   border-radius: 50%;
@@ -379,7 +389,7 @@ md-sidenav {
   margin: 2px 2px;
 }
 
-/* line 260, ../../app/styles/style.scss */
+/* line 266, ../../app/styles/style.scss */
 .active {
   right: 0px;
   color: #777;
@@ -387,33 +397,53 @@ md-sidenav {
   padding: 0px 10px !important;
 }
 
-/* line 266, ../../app/styles/style.scss */
+/* line 272, ../../app/styles/style.scss */
 .pad-rl {
   padding: 0px 30px;
 }
 
-/* line 269, ../../app/styles/style.scss */
+/* line 275, ../../app/styles/style.scss */
 .md-block {
   min-width: 20vw !important;
 }
 
-/* line 272, ../../app/styles/style.scss */
+/* line 278, ../../app/styles/style.scss */
+.block {
+  display: block !important;
+}
+
+/* line 281, ../../app/styles/style.scss */
+.width100 {
+  width: 100% !important;
+}
+
+/* line 284, ../../app/styles/style.scss */
+md-slider-container {
+  padding: 0px 9px;
+}
+
+/* line 287, ../../app/styles/style.scss */
+md-slider-container md-input-container input[type=number] {
+  padding-left: 0px;
+}
+
+/* line 290, ../../app/styles/style.scss */
 md-sidenav {
   width: 40vw !important;
 }
 
-/* line 275, ../../app/styles/style.scss */
+/* line 293, ../../app/styles/style.scss */
 md-input-container {
   text-align: left;
 }
 
-/* line 278, ../../app/styles/style.scss */
+/* line 296, ../../app/styles/style.scss */
 td.cashout {
   background-color: #7aca62;
   color: #ffffff !important;
 }
 
-/* line 283, ../../app/styles/style.scss */
+/* line 301, ../../app/styles/style.scss */
 footer {
   background-color: #323A45;
   color: #fff;
@@ -423,12 +453,12 @@ footer {
   bottom: 0px;
 }
 
-/* line 291, ../../app/styles/style.scss */
+/* line 309, ../../app/styles/style.scss */
 .faq-card {
   padding: 25px !important;
 }
 
-/* line 294, ../../app/styles/style.scss */
+/* line 312, ../../app/styles/style.scss */
 .faq,
 .faq li {
   margin: 0;
@@ -436,7 +466,7 @@ footer {
   list-style: none;
 }
 
-/* line 301, ../../app/styles/style.scss */
+/* line 319, ../../app/styles/style.scss */
 .faq h3 {
   border-bottom: 2px solid #5ABD3B;
   padding: 20px 0;
@@ -445,20 +475,20 @@ footer {
   cursor: pointer;
 }
 
-/* line 308, ../../app/styles/style.scss */
+/* line 326, ../../app/styles/style.scss */
 .faq h3 .mdi {
   position: absolute;
   right: 12px;
   top: 12px;
 }
 
-/* line 313, ../../app/styles/style.scss */
+/* line 331, ../../app/styles/style.scss */
 .faq div {
   line-height: 22px;
   padding: 15px 0 25px 0;
 }
 
-/* line 318, ../../app/styles/style.scss */
+/* line 336, ../../app/styles/style.scss */
 .StripeElement {
   background-color: white;
   padding: 8px 12px;
@@ -468,38 +498,38 @@ footer {
   transition: box-shadow 150ms ease;
 }
 
-/* line 328, ../../app/styles/style.scss */
+/* line 346, ../../app/styles/style.scss */
 .StripeElement--focus {
   box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
-/* line 332, ../../app/styles/style.scss */
+/* line 350, ../../app/styles/style.scss */
 .StripeElement--invalid {
   border-color: #fa755a;
 }
 
-/* line 336, ../../app/styles/style.scss */
+/* line 354, ../../app/styles/style.scss */
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
 
-/* line 339, ../../app/styles/style.scss */
+/* line 357, ../../app/styles/style.scss */
 .error {
   color: #000;
   font-size: 12px;
 }
 
-/* line 344, ../../app/styles/style.scss */
+/* line 362, ../../app/styles/style.scss */
 md-progress-linear .md-container {
   background-color: #dcdcdc;
 }
 
-/* line 347, ../../app/styles/style.scss */
+/* line 365, ../../app/styles/style.scss */
 md-progress-linear .md-bar {
   background-color: #206184;
 }
 
-/* line 350, ../../app/styles/style.scss */
+/* line 368, ../../app/styles/style.scss */
 .loader {
   position: fixed;
   top: 0px;
@@ -508,13 +538,13 @@ md-progress-linear .md-bar {
   z-index: 100;
 }
 
-/* line 357, ../../app/styles/style.scss */
+/* line 375, ../../app/styles/style.scss */
 .fixedNav {
   position: fixed;
   height: 7vh;
 }
 
-/* line 361, ../../app/styles/style.scss */
+/* line 379, ../../app/styles/style.scss */
 .cart {
   height: calc(100% - 7vh) !important;
   height: -moz-calc(100% - 7vh) !important;
@@ -525,7 +555,7 @@ md-progress-linear .md-bar {
   background-color: #fff;
 }
 
-/* line 371, ../../app/styles/style.scss */
+/* line 389, ../../app/styles/style.scss */
 tbody.cartRows {
   position: fixed;
   display: block;
@@ -535,28 +565,28 @@ tbody.cartRows {
   overflow-x: hidden;
 }
 
-/* line 379, ../../app/styles/style.scss */
+/* line 397, ../../app/styles/style.scss */
 tr {
   display: table;
   width: inherit;
 }
 
-/* line 383, ../../app/styles/style.scss */
+/* line 401, ../../app/styles/style.scss */
 button.md-fab.md-fab.md-mini.md-warn.md-button.md-ink-ripple {
   background-color: #777;
 }
 
-/* line 386, ../../app/styles/style.scss */
+/* line 404, ../../app/styles/style.scss */
 input.input {
   color: #fff;
 }
 
-/* line 389, ../../app/styles/style.scss */
+/* line 407, ../../app/styles/style.scss */
 .begin {
   margin-top: 7vh;
 }
 
-/* line 393, ../../app/styles/style.scss */
+/* line 411, ../../app/styles/style.scss */
 .mobFilter {
   position: fixed;
   bottom: 0px;
@@ -565,14 +595,14 @@ input.input {
   height: 10vh;
 }
 
-/* line 400, ../../app/styles/style.scss */
+/* line 418, ../../app/styles/style.scss */
 .prod {
   background-color: #bfbfbf;
 }
 
-/* line 405, ../../app/styles/style.scss */
+/* line 423, ../../app/styles/style.scss */
 .box-one.ng-hide-add {
-  animation: 0.75s hide;
+  animation: 0.25 hide;
 }
 
 @keyframes hide {
@@ -588,7 +618,7 @@ input.input {
     transform: scale(0.75);
   }
 }
-/* line 439, ../../app/styles/style.scss */
+/* line 457, ../../app/styles/style.scss */
 .box-one.ng-hide-remove {
   animation: 0.75s show;
 }
