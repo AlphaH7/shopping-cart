@@ -556,6 +556,11 @@ md-progress-linear .md-bar {
 }
 
 /* line 389, ../../app/styles/style.scss */
+.scroll {
+  overflow: scroll;
+}
+
+/* line 392, ../../app/styles/style.scss */
 tbody.cartRows {
   position: fixed;
   display: block;
@@ -565,28 +570,28 @@ tbody.cartRows {
   overflow-x: hidden;
 }
 
-/* line 397, ../../app/styles/style.scss */
+/* line 400, ../../app/styles/style.scss */
 tr {
   display: table;
   width: inherit;
 }
 
-/* line 401, ../../app/styles/style.scss */
+/* line 404, ../../app/styles/style.scss */
 button.md-fab.md-fab.md-mini.md-warn.md-button.md-ink-ripple {
   background-color: #777;
 }
 
-/* line 404, ../../app/styles/style.scss */
+/* line 407, ../../app/styles/style.scss */
 input.input {
   color: #fff;
 }
 
-/* line 407, ../../app/styles/style.scss */
+/* line 410, ../../app/styles/style.scss */
 .begin {
   margin-top: 7vh;
 }
 
-/* line 411, ../../app/styles/style.scss */
+/* line 414, ../../app/styles/style.scss */
 .mobFilter {
   position: fixed;
   bottom: 0px;
@@ -595,12 +600,12 @@ input.input {
   height: 10vh;
 }
 
-/* line 418, ../../app/styles/style.scss */
+/* line 421, ../../app/styles/style.scss */
 .prod {
   background-color: #bfbfbf;
 }
 
-/* line 423, ../../app/styles/style.scss */
+/* line 426, ../../app/styles/style.scss */
 .box-one.ng-hide-add {
   animation: 0.25 hide;
 }
@@ -618,7 +623,7 @@ input.input {
     transform: scale(0.75);
   }
 }
-/* line 457, ../../app/styles/style.scss */
+/* line 460, ../../app/styles/style.scss */
 .box-one.ng-hide-remove {
   animation: 0.75s show;
 }
@@ -636,3 +641,5 @@ input.input {
     transform: scale(1);
   }
 }
+
+/*# sourceMappingURL=style.css.map */

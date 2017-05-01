@@ -1,9 +1,6 @@
-
-
-
   <div flex="30" ng-init="(discMin= 0); (priceMin= 0) ; (discMax= 100); (priceMax= 4000) " layout-gt-xs="column" layout-align="start stretch" hide-xs hide-sm class="cart begin" ng-class="{'prod border' : !cart}">
     <div  layout="column" class="desc center white-text" ng-class="{'desc1' : !cart}" layout-align="center center">
-    <p  ng-show="!cart" class="center box-one">Filter your search</p>
+    <p  ng-show="!cart" class="center box-one">Filter</p>
     <div ng-show="!cart" layout="row" layout-align="space-around center">
         <md-input-container style="margin-top: 33px;">
           <label>Search</label>
@@ -45,7 +42,7 @@
     </md-button>
 
     <p  ng-show="cart" class="center md-primary box-one" >  <md-button class="md-primary md-hue-1 box-one "  ng-click="cart = !cart" aria-label="Profile">
-        <md-icon md-font-icon="mdi mdi-filter-outline mdi-24px"></md-icon> Filter your search
+        <md-icon md-font-icon="mdi mdi-filter-outline mdi-24px"></md-icon> Filter
       </md-button></p>
   </div>
 
@@ -54,12 +51,12 @@
 
 
 
-      <div ng-show="cart" class="box-one">
+      <div ng-show="cart" class="box-one scroll">
         <table ng-show="cart" class="table box-one" ng-init="cart = true">
             <h2 ><span class="info">Your Shopping Cart</h2>
 
           <p ng-show="result.length==0" class="grey center pad-tb" ><i>Empty Cart</i></p>
-          <tbody ng-show="!result.length==0" class=" center" md-body>
+          <tbody ng-show="!result.length==0" class="center" md-body>
             <tr md-row ng-repeat="purchase in result">
               <td style="width: 30% !important" >{{purchase.name}}</td>
               <td style="width: 10% !important"  ng-repeat="item in items" ng-show="item.product==purchase.name">x{{ purchase.price / item.price | number : 0}}</td>
