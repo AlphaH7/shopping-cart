@@ -89,7 +89,7 @@
 
                   <div layout="row" class="pad-tb" layout-align="space-between center">
                   <div layout="column" class="pad-tb" layout-align="space-between center">
-                    <h4 class="pad-0 ">₹ {{ item.price + ( item.price * item.discount  / 100 ) | number:2 }}</h4>
+                    <h4 class="pad-0 origPrc">₹ {{ item.price + ( item.price * item.discount  / 100 ) | number:2 }}</h4>
                     <h4 class="pad-0">₹ {{ item.price }}</h4>
                   </div>
                   <p class="discount"> {{item.discount}} % off</p>
