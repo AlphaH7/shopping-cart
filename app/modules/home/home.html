@@ -1,55 +1,4 @@
   <div flex="30" ng-init="(discMin= 0); (priceMin= 0) ; (discMax= 100); (priceMax= 4000) " layout-gt-xs="column" layout-align="start stretch" hide-xs hide-sm class="cart begin" ng-class="{'prod border' : !cart}">
-    <div  layout="column" class="desc center white-text" ng-class="{'desc1' : !cart}" layout-align="center center">
-    <p  ng-show="!cart" class="center box-one">Filter</p>
-    <div ng-show="!cart" layout="row" layout-align="space-around center">
-        <md-input-container style="margin-top: 33px;">
-          <label>Search</label>
-          <input ng-model="search" class="input">
-        </md-input-container>
-          <div layout="row" layout-align="space-between center" >
-                    <md-select ng-model="filter" placeholder="Relevance" ng-change="sort(filter)" class="md-no-underline fltr">
-                      <md-option value="Available">Availability</md-option>
-                      <md-option value="discount">Discount</md-option>
-                      <md-option value="price">Price</md-option>
-                    </md-select>
-            </div>
-    </div>
-    <div ng-show="!cart" layout="row" class="center white-text block width100 box-one" layout-align="space-between center">
-      <md-slider-container layout="row" layout-align="space-around center">
-        <span flex="30">Min. budget</span>
-        <md-slider flex="55" min="0" max="4000" class="md-primary" ng-model="priceMin" aria-label="red" id="red-slider">
-        </md-slider>
-        <md-input-container flex="15" class="block">
-          <input flex type="number" min="0" max="4000"  ng-model="priceMin" aria-label="priceMin" aria-controls="priceMin-slider">
-        </md-input-container>
-      </md-slider-container>
-  </div>
-
-    <div ng-show="!cart" layout="row" class="center white-text block width100 box-one" layout-align="space-around center">
-      <md-slider-container layout="row" layout-align="space-around center">
-        <span flex="30">Max. budget</span>
-        <md-slider flex="55" min="0" max="4000" class="md-primary" ng-model="priceMax" aria-label="red" id="red-slider">
-        </md-slider>
-        <md-input-container flex="15" class="block">
-          <input flex type="number" min="0" max="4000"  ng-model="priceMax" aria-label="priceMax" aria-controls="priceMax-slider">
-        </md-input-container>
-      </md-slider-container>
-  </div>
-
-
-    <md-button class="md-fab md-primary md-hue-1 box-one cartBtn" ng-show="!cart" ng-click="cart = !cart" aria-label="Profile">
-      <md-icon md-font-icon="mdi mdi-cart mdi-24px"></md-icon>
-    </md-button>
-
-    <p  ng-show="cart" class="center md-primary box-one" >  <md-button class="md-primary md-hue-1 box-one "  ng-click="cart = !cart" aria-label="Profile">
-        <md-icon md-font-icon="mdi mdi-filter-outline mdi-24px"></md-icon> Filter
-      </md-button></p>
-  </div>
-
-
-
-
-
 
       <div ng-show="cart" class="box-one scroll">
         <table ng-show="cart" class="table box-one" ng-init="cart = true">
@@ -60,8 +9,9 @@
             <tr md-row ng-repeat="purchase in result">
               <td style="width: 30% !important" >{{purchase.name}}</td>
               <td style="width: 10% !important"  ng-repeat="item in items" ng-show="item.product==purchase.name">x{{ purchase.price / item.price | number : 0}}</td>
-              <td style="width: 60% !important"  class="center">₹ {{purchase.price | number : 2}}
-              <md-button class="md-fab md-mini md-warn" aria="removeItem" class="right" ng-click="remove(purchase.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button>
+              <td style="width: 55% !important"  class="center">₹ {{purchase.price | number : 2}}</td>
+              <td style="width: 5% !important"  class="center">
+              <md-button class="md-icon-button deleteBtn" aria="removeItem" class="right" ng-click="remove(purchase.name)"><md-icon md-font-icon="mdi mdi-close mdi-24px"></md-icon> </md-button>
              </td>
             </tr>
             <tr style="width: 100% !important" >
@@ -71,6 +21,54 @@
           </tbody>
         </table>
       </div>
+
+      <div  layout="column" class="desc center white-text" ng-class="{'desc1' : !cart}" layout-align="center center">
+      <p  ng-show="!cart" class="center box-one">Filter</p>
+      <div ng-show="!cart" layout="row" layout-align="space-around center">
+          <md-input-container style="margin-top: 33px;">
+            <label>Search</label>
+            <input ng-model="search" class="input">
+          </md-input-container>
+            <div layout="row" layout-align="space-between center" >
+                      <md-select ng-model="filter" placeholder="Relevance" ng-change="sort(filter)" class="md-no-underline fltr">
+                        <md-option value="Available">Availability</md-option>
+                        <md-option value="discount">Discount</md-option>
+                        <md-option value="price">Price</md-option>
+                      </md-select>
+              </div>
+      </div>
+      <div ng-show="!cart" layout="row" class="center white-text block width100 box-one" layout-align="space-between center">
+        <md-slider-container layout="row" layout-align="space-around center">
+          <span flex="30">Min. budget</span>
+          <md-slider flex="55" min="0" max="4000" class="md-primary" ng-model="priceMin" aria-label="red" id="red-slider">
+          </md-slider>
+          <md-input-container flex="15" class="block">
+            <input flex type="number" min="0" max="4000"  ng-model="priceMin" aria-label="priceMin" aria-controls="priceMin-slider">
+          </md-input-container>
+        </md-slider-container>
+    </div>
+
+      <div ng-show="!cart" layout="row" class="center white-text block width100 box-one" layout-align="space-around center">
+        <md-slider-container layout="row" layout-align="space-around center">
+          <span flex="30">Max. budget</span>
+          <md-slider flex="55" min="0" max="4000" class="md-primary" ng-model="priceMax" aria-label="red" id="red-slider">
+          </md-slider>
+          <md-input-container flex="15" class="block">
+            <input flex type="number" min="0" max="4000"  ng-model="priceMax" aria-label="priceMax" aria-controls="priceMax-slider">
+          </md-input-container>
+        </md-slider-container>
+    </div>
+
+
+      <md-button class="md-fab md-primary md-hue-1 box-one cartBtn" ng-show="!cart" ng-click="cart = !cart" aria-label="Profile">
+        <md-icon md-font-icon="mdi mdi-cart mdi-24px"></md-icon>
+      </md-button>
+
+      <p  ng-show="cart" class="center md-primary box-one" >  <md-button class="md-primary md-hue-1 box-one "  ng-click="cart = !cart" aria-label="Profile">
+          <md-icon md-font-icon="mdi mdi-filter-outline mdi-24px"></md-icon> Filter
+        </md-button></p>
+    </div>
+
     </div>
 
     <div layout="row" layout-align="center center" class="begin prod pad-top">
@@ -91,15 +89,14 @@
 
                   <div layout="row" class="pad-tb" layout-align="space-between center">
                   <div layout="column" class="pad-tb" layout-align="space-between center">
-                    <h4 class="pad-0 origPrc">₹ {{ item.price + ( item.price * item.discount  / 100 | number : 2) }}</h4>
+                    <h4 class="pad-0 ">₹ {{ item.price + ( item.price * item.discount  / 100 ) | number:2 }}</h4>
                     <h4 class="pad-0">₹ {{ item.price }}</h4>
                   </div>
                   <p class="discount"> {{item.discount}} % off</p>
                   </div>
                 </md-card-content>
-                <div class="md-actions center" layout="row" layout-align="end center">
-                  {{}}
-                  <md-button class="md-primary md-raised" ng-disabled="!item.Available" ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
+                <div class="md-actions center" layout="row" layout-align="center center">
+                  <md-button class="md-primary md-hue-2 md-raised addBtn" ng-disabled="!item.Available" ng-click="add(item.id, item.product , item.price)">Add to Cart</md-button>
                 </div>
               </md-card>
             </span>

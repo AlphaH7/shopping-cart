@@ -24,6 +24,9 @@ md-toast{
 	color: #333;
 	min-width : 25vw;
 	z-index: 2;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
 .box{
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -195,7 +198,7 @@ td,th{
 }
 td{
   font-size: 14px;
-	padding: 6px 20px;
+	padding: 6px 5px;
 	color: #666;
 }
 th{
@@ -231,6 +234,10 @@ md-sidenav {
 .cartBtn{
   margin: 60px;
 }
+.addBtn{
+  border-radius: 20px !important;
+  padding: 0px 30px !important;
+}
 .pad-tb{
 		padding: 10px 0px;
 }
@@ -240,7 +247,13 @@ md-sidenav {
     border-radius: 15px;
 		font-size: 12px;
 		color: #fff;
-		background-color:#7ac5cd;
+		background-color:#F9CE6F;
+}
+.btn{
+  background-color: #3782FB !important;
+}
+.btn [disabled=disabled]{
+  background-color: #999 !important;
 }
 .origPrc{
 	text-decoration: line-through;
@@ -375,6 +388,9 @@ md-progress-linear .md-bar {
 .fixedNav{
   position: fixed;
   height: 7vh;
+}
+.deleteBtn{
+  color: #888;
 }
 .cart{
   height: calc(100% - 7vh) !important;
