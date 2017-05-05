@@ -4,7 +4,7 @@ Dynamic Frontend Shopping app. Renders data from a json file ('Products.json') a
 
 # Demo
 
-  - http://ax.net16.net/
+  - http://ax.vacau.com/am/
 
 # Features -
 
